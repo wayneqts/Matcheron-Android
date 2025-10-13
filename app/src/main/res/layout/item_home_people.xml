@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        app:cardElevation="0dp"
+        app:cardCornerRadius="@dimen/dp_15"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_info">
+        <ImageView
+            android:background="@color/gray4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/iv"/>
+        <ProgressBar
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_gravity="center"
+            android:id="@+id/pb_loading"/>
+    </androidx.cardview.widget.CardView>
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:id="@+id/ll_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:id="@+id/tv_name"
+            android:text="Sam - 30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            android:fontFamily="@font/baloo2_semibold"/>
+        <TextView
+            android:layout_below="@id/tv_name"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:id="@+id/tv_profession"
+            android:text="Sam - 30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            android:fontFamily="@font/baloo2_regular"/>
+        <TextView
+            android:layout_below="@id/tv_profession"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:id="@+id/tv_born"
+            android:text="Sam - 30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            android:fontFamily="@font/baloo2_regular"/>
+    </RelativeLayout>
+</RelativeLayout>

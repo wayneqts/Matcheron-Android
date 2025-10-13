@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/dp_5"
+    android:paddingEnd="@dimen/dp_15">
+    <RadioButton
+        android:id="@+id/rb"
+        android:paddingStart="@dimen/dp_6"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_15"
+        android:fontFamily="@font/baloo2_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/cb_selector"/>
+</RelativeLayout>

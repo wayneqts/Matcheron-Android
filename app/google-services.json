@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "928099499894",
+    "project_id": "matcheron-eaa2f",
+    "storage_bucket": "matcheron-eaa2f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928099499894:android:4889d6c10c0c26ed4cc457",
+        "android_client_info": {
+          "package_name": "com.appmonarchy.matcheron"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928099499894-m5u560rllev41ct88mgk3kh4g5j1ri26.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appmonarchy.matcheron",
+            "certificate_hash": "5836cbdb03b7ad645c204593194e6e2656d182ea"
+          }
+        },
+        {
+          "client_id": "928099499894-72vrqhmrm9ghru87r5vm032ckrfjipai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfa_Fs-Jxqx5atZYXKetKVAb6MO-ZilQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928099499894-72vrqhmrm9ghru87r5vm032ckrfjipai.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "928099499894-rmqt3jvbvl5hm965d2slsd0dhu438c16.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.appmonarchy.matcheron"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
