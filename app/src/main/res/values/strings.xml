@@ -249,4 +249,5 @@
     <string name="rent_buy_and_sell_cars">Rent, buy, and sell cars.</string>
     <string name="dating_find_the_perfect_match">Dating, find the perfect match.</string>
     <string name="rent_buy_and_sell_homes">Rent, buy, and sell homes.</string>
+    <string name="show_phone_note">If you want your phone number to be visible to the public, select\'Visible\'; otherwise, keep it\'Hidden\'.</string>
 </resources>

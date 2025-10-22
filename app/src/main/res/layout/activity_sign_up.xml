@@ -627,6 +627,14 @@
                         android:button="@drawable/cb_selector"/>
                 </RadioGroup>
                 <TextView
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo2_medium"
+                    android:textSize="@dimen/sp_12"
+                    android:text="@string/show_phone_note"
+                    android:textColor="@color/black" />
+                <TextView
                     android:layout_marginTop="@dimen/dp_15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

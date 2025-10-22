@@ -83,7 +83,7 @@ public class SignUp extends BaseActivity {
     GoalAdapter goalAdapter;
     ImgAdapter imgAdapter;
     ArrayAdapter<String> arrayAdapter;
-    String religionId = "", countryId = "", stateId = "", gender = "Male", seeking = "Female", pairing = "Exclusive", stt = "", phoneStt = "0";
+    String religionId = "", stateId = "", gender = "Male", seeking = "Female", pairing = "Exclusive", stt = "", phoneStt = "0";
     public String selectType;
     GoogleSignInAccount account;
     int RC_SIGN_IN = 123;
@@ -301,10 +301,11 @@ public class SignUp extends BaseActivity {
         CustomSpinnerAdapter religionAdapter = new CustomSpinnerAdapter(SignUp.this, android.R.layout.simple_spinner_item, stateArr);
         religionAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         binding.spinnerState.setAdapter(religionAdapter);
+        binding.etCountry.setText("United States");
         getGoal();
         getReligion();
         getCountryOfOrigin();
-        getCountry();
+        getState();
     }
 
     // popup select country
@@ -581,7 +582,7 @@ public class SignUp extends BaseActivity {
         builder.setType(MultipartBody.FORM);
         builder.addFormDataPart("fname", fName).addFormDataPart("lname", lName).addFormDataPart("gender", gender)
                 .addFormDataPart("seeking", seeking).addFormDataPart("age", age).addFormDataPart("height", height)
-                .addFormDataPart("weight", weight).addFormDataPart("status", stt).addFormDataPart("country", countryId)
+                .addFormDataPart("weight", weight).addFormDataPart("status", stt).addFormDataPart("country", "231")
                 .addFormDataPart("state", stateId).addFormDataPart("phone", phone).addFormDataPart("email", email)
                 .addFormDataPart("religion", religionId).addFormDataPart("goal", goalId).addFormDataPart("pairing", pairing)
                 .addFormDataPart("password", pw).addFormDataPart("profession", profession).addFormDataPart("bio", bio)
@@ -712,11 +713,11 @@ public class SignUp extends BaseActivity {
     }
 
     // get state
-    private void getState(String id) {
+    private void getState() {
         binding.spinnerState.setVisibility(View.GONE);
         binding.ivDown.setVisibility(View.GONE);
         binding.pbState.setVisibility(View.VISIBLE);
-        api.getArrById("state.php", id).enqueue(new Callback<JsonArray>() {
+        api.getArrById("state.php", "231").enqueue(new Callback<JsonArray>() {
             @Override
             public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
                 String[] stateArr = null;
@@ -748,31 +749,6 @@ public class SignUp extends BaseActivity {
 
             @Override
             public void onFailure(Call<JsonArray> call, Throwable t) {
-                Toast.makeText(SignUp.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    // get country
-    private void getCountry() {
-        api.getCountry().enqueue(new Callback<JsonObject>() {
-            @Override
-            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                JSONObject jsonObject;
-                if (response.isSuccessful()){
-                    try {
-                        jsonObject = new JSONObject(String.valueOf(response.body()));
-                        binding.etCountry.setText(jsonObject.optString("currentcountry"));
-                        countryId = jsonObject.optString("currentid");
-                        getState(countryId);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<JsonObject> call, Throwable t) {
                 Toast.makeText(SignUp.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
