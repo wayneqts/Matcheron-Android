@@ -15,71 +15,110 @@
             android:layout_marginTop="@dimen/dp_15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/country"
+            android:text="@string/first_name"
             android:textColor="@color/black"
             android:textSize="@dimen/sp_18"
             android:fontFamily="@font/baloo2_medium"/>
-        <RelativeLayout
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
             android:layout_marginTop="@dimen/dp_5"
             android:background="@drawable/bg_edt"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_45">
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:layout_toStartOf="@id/iv_down_country"
-                android:background="@android:color/transparent"
-                android:id="@+id/spinner_country"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-            <ProgressBar
-                android:layout_marginStart="@dimen/dp_13"
-                android:layout_centerVertical="true"
-                android:id="@+id/pb_country"
-                android:layout_width="@dimen/dp_18"
-                android:layout_height="@dimen/dp_18"/>
-            <ImageView
-                android:id="@+id/iv_down_country"
-                android:layout_marginEnd="@dimen/dp_13"
-                android:layout_width="@dimen/dp_10"
-                android:layout_height="@dimen/dp_10"
-                android:src="@mipmap/ic_down"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"/>
-        </RelativeLayout>
-        <TextView
+            android:fontFamily="@font/baloo2_regular"
+            android:hint="@string/first_name"
+            android:inputType="textCapSentences"
+            android:paddingHorizontal="@dimen/dp_10"
+            android:singleLine="true"
+            android:textColorHint="@color/gray1"
+            android:textSize="@dimen/sp_16" />
+        <LinearLayout
             android:layout_marginTop="@dimen/dp_15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/state_province"
-            android:textColor="@color/black"
-            android:textSize="@dimen/sp_18"
-            android:fontFamily="@font/baloo2_medium"/>
-        <RelativeLayout
-            android:layout_marginTop="@dimen/dp_5"
-            android:background="@drawable/bg_edt"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_45">
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:layout_toStartOf="@id/iv_down"
-                android:background="@android:color/transparent"
-                android:id="@+id/spinner_state"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/country"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_18"
+                    android:fontFamily="@font/baloo2_medium"/>
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="@drawable/bg_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_45">
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:layout_toStartOf="@id/iv_down_country"
+                        android:background="@android:color/transparent"
+                        android:id="@+id/spinner_country"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                    <ProgressBar
+                        android:layout_marginStart="@dimen/dp_13"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/pb_country"
+                        android:layout_width="@dimen/dp_18"
+                        android:layout_height="@dimen/dp_18"/>
+                    <ImageView
+                        android:id="@+id/iv_down_country"
+                        android:layout_marginEnd="@dimen/dp_13"
+                        android:layout_width="@dimen/dp_10"
+                        android:layout_height="@dimen/dp_10"
+                        android:src="@mipmap/ic_down"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/state_province"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_18"
+                android:fontFamily="@font/baloo2_medium"/>
+            <RelativeLayout
+                android:layout_marginTop="@dimen/dp_5"
+                android:background="@drawable/bg_edt"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-            <ProgressBar
-                android:visibility="gone"
-                android:layout_marginStart="@dimen/dp_13"
-                android:layout_centerVertical="true"
-                android:id="@+id/pb_state"
-                android:layout_width="@dimen/dp_18"
-                android:layout_height="@dimen/dp_18"/>
-            <ImageView
-                android:id="@+id/iv_down"
-                android:layout_marginEnd="@dimen/dp_13"
-                android:layout_width="@dimen/dp_10"
-                android:layout_height="@dimen/dp_10"
-                android:src="@mipmap/ic_down"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"/>
-        </RelativeLayout>
+                android:layout_height="@dimen/dp_45">
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:layout_toStartOf="@id/iv_down"
+                    android:background="@android:color/transparent"
+                    android:id="@+id/spinner_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+                <ProgressBar
+                    android:visibility="gone"
+                    android:layout_marginStart="@dimen/dp_13"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/pb_state"
+                    android:layout_width="@dimen/dp_18"
+                    android:layout_height="@dimen/dp_18"/>
+                <ImageView
+                    android:id="@+id/iv_down"
+                    android:layout_marginEnd="@dimen/dp_13"
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:src="@mipmap/ic_down"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+        </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

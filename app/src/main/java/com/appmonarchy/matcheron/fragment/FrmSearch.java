@@ -374,6 +374,7 @@ public class FrmSearch extends Fragment {
     // set search
     private void setSearch(){
         RequestBody rqId = RequestBody.create(MediaType.parse("text/plain"), activity.pref.getUserId());
+        RequestBody rqFName = RequestBody.create(MediaType.parse("text/plain"), binding.etName.getText().toString().trim());
         RequestBody rqAge1 = RequestBody.create(MediaType.parse("text/plain"), binding.etFromAge.getText().toString().trim());
         RequestBody rqAge2 = RequestBody.create(MediaType.parse("text/plain"), binding.etToAge.getText().toString().trim());
         RequestBody rqHeight1 = RequestBody.create(MediaType.parse("text/plain"), binding.etFromHeight.getText().toString().trim());
@@ -387,11 +388,11 @@ public class FrmSearch extends Fragment {
         RequestBody rqState = RequestBody.create(MediaType.parse("text/plain"), stateId);
         RequestBody rqCountry = RequestBody.create(MediaType.parse("text/plain"), countryId);
         RequestBody rqOrigin = RequestBody.create(MediaType.parse("text/plain"), binding.etOrigin.getText().toString().trim());
-        activity.api.setSearch(rqId, rqSeeking, rqAge1, rqAge2, rqHeight1, rqHeight2, rqWeight1, rqWeight2, rqCountry, rqState, rqReligion, rqGoal, rqPairing, rqOrigin).enqueue(new Callback<JsonObject>() {
+        activity.api.setSearch(rqId, rqFName, rqSeeking, rqAge1, rqAge2, rqHeight1, rqHeight2, rqWeight1, rqWeight2, rqCountry, rqState, rqReligion, rqGoal, rqPairing, rqOrigin).enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                 if (response.isSuccessful()){
-                    startActivity(new Intent(activity, SearchList.class));
+                    startActivity(new Intent(activity, SearchList.class).putExtra("f_name", binding.etName.getText().toString().trim()));
                 }
                 activity.tool.hideLoading();
             }

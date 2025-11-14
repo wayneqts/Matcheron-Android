@@ -6,9 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".activities.EditPf"
     android:background="@color/white"
-    android:paddingTop="@dimen/dp_15"
-    android:paddingHorizontal="@dimen/dp_15">
+    android:fitsSystemWindows="true"
+    >
     <RelativeLayout
+        android:layout_marginTop="@dimen/dp_15"
+        android:paddingHorizontal="@dimen/dp_15"
         android:id="@+id/rl_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -27,6 +29,7 @@
             android:fontFamily="@font/baloo2_bold"/>
     </RelativeLayout>
     <androidx.core.widget.NestedScrollView
+        android:paddingHorizontal="@dimen/dp_15"
         android:layout_below="@id/rl_top"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

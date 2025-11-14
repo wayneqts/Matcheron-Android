@@ -1,5 +1,6 @@
 package com.appmonarchy.matcheron.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.appmonarchy.matcheron.activities.OtherUser;
 import com.appmonarchy.matcheron.databinding.ItemHomePeopleBinding;
+import com.appmonarchy.matcheron.helper.AppConstrains;
 import com.appmonarchy.matcheron.helper.Tool;
 import com.appmonarchy.matcheron.model.People;
 import com.bumptech.glide.Glide;
@@ -84,7 +86,7 @@ public class HomePeopleAdapter extends RecyclerView.Adapter<HomePeopleAdapter.VH
             holder.bind.pbLoading.setVisibility(View.GONE);
         }
         holder.itemView.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        holder.bind.iv.setOnClickListener(v -> context.startActivity(new Intent(context, OtherUser.class).putExtra("id", people.getId())));
+        holder.bind.iv.setOnClickListener(v -> ((Activity) context).startActivityForResult(new Intent(context, OtherUser.class).putExtra("id", people.getId()), AppConstrains.REFRESH_HOME_CODE));
     }
 
     @Override

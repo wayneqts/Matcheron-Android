@@ -8,4 +8,5 @@ public class AppConstrains {
     public static int REFRESH_PF_CODE = 15;
     public static int REFRESH_MESS_CODE = 11;
     public static int REFRESH_MAYBE_CODE = 17;
+    public static int REFRESH_HOME_CODE = 18;
 }

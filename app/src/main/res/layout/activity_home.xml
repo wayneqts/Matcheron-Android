@@ -8,6 +8,7 @@
     android:id="@+id/drawer"
     tools:context=".activities.Home">
     <RelativeLayout
+        android:fitsSystemWindows="true"
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -61,6 +62,7 @@
             android:layout_below="@id/rl_top_bar"/>
     </RelativeLayout>
     <RelativeLayout
+        android:fitsSystemWindows="true"
         android:id="@+id/rl_menu"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -96,7 +98,7 @@
                     <TextView
                         android:text="@string/home"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -116,7 +118,7 @@
                     <TextView
                         android:text="@string/my_profile"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -138,7 +140,7 @@
                     <TextView
                         android:text="@string/search"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -158,7 +160,7 @@
                     <TextView
                         android:text="@string/notification"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -178,7 +180,7 @@
                     <TextView
                         android:text="@string/mixers"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -198,7 +200,7 @@
                     <TextView
                         android:text="@string/messages"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -218,7 +220,7 @@
                     <TextView
                         android:text="@string/likes"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -238,7 +240,7 @@
                     <TextView
                         android:text="@string/maybe"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -258,7 +260,7 @@
                     <TextView
                         android:text="@string/liked"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -278,7 +280,7 @@
                     <TextView
                         android:text="@string/matchmaking"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -298,7 +300,7 @@
                     <TextView
                         android:text="@string/partner_apps"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -318,7 +320,7 @@
                     <TextView
                         android:text="@string/q_amp_a"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -338,7 +340,7 @@
                     <TextView
                         android:text="@string/delete_account"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -358,7 +360,7 @@
                     <TextView
                         android:text="@string/terms"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -378,7 +380,7 @@
                     <TextView
                         android:text="@string/contact_us"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"
@@ -398,7 +400,7 @@
                     <TextView
                         android:text="@string/logout"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:fontFamily="@font/baloo2_regular"
+                        android:fontFamily="@font/baloo2_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/sp_16"

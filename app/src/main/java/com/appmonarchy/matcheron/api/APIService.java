@@ -43,9 +43,12 @@ public interface APIService {
     Call<JsonObject> joinEv(@Query("uid") String sid, @Query("eid") String rid);
 
     @GET()
-    Call<JsonObject> getDataById(@Url String url,  @Query("id") String id);
+    Call<JsonObject> getDataById(@Url String url, @Query("id") String id);
     @GET("userlist.php")
     Call<JsonObject> getUserList();
+
+    @GET("search_listing.php")
+    Call<JsonObject> getSearchList(@Query("id") String id, @Query("fname") String fName);
 
     @POST("signup_submit.php")
     Call<JsonObject> register(@Body RequestBody rqBody);
@@ -72,7 +75,7 @@ public interface APIService {
 
     @Multipart
     @POST("search_pefrance.php")
-    Call<JsonObject> setSearch(@Part("uid") RequestBody uid, @Part("seeking") RequestBody seeking, @Part("age1") RequestBody age1, @Part("age2") RequestBody age2, @Part("height1") RequestBody height1,
+    Call<JsonObject> setSearch(@Part("uid") RequestBody uid, @Part("fname") RequestBody fName, @Part("seeking") RequestBody seeking, @Part("age1") RequestBody age1, @Part("age2") RequestBody age2, @Part("height1") RequestBody height1,
                                @Part("height2") RequestBody height2, @Part("weight1") RequestBody weight1, @Part("weight2") RequestBody weight2, @Part("country") RequestBody country,
                                @Part("state") RequestBody state, @Part("religion") RequestBody religion, @Part("goal") RequestBody goal, @Part("pairing") RequestBody pairing, @Part("country_ori") RequestBody origin);
 }

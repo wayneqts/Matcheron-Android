@@ -92,7 +92,7 @@ public class SearchList extends BaseActivity {
 
     // get data
     private void getData(){
-        api.getDataById("search_listing.php", pref.getUserId()).enqueue(new Callback<JsonObject>() {
+        api.getSearchList(pref.getUserId(), getIntent().getStringExtra("f_name")).enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                 list.clear();

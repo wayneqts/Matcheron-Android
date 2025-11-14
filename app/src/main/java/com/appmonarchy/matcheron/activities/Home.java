@@ -359,5 +359,8 @@ public class Home extends BaseActivity {
         if (resultCode == AppConstrains.REFRESH_MAYBE_CODE){
             replaceFrm(new FrmLikes(), "likes");
         }
+        if (resultCode == AppConstrains.REFRESH_HOME_CODE){
+            replaceFrm(new FrmHome(), "home");
+        }
     }
 }

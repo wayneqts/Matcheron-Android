@@ -7,9 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".activities.EventDetail"
     android:background="@color/white"
-    android:padding="@dimen/dp_15"
+    android:fitsSystemWindows="true"
     android:visibility="gone">
     <RelativeLayout
+        android:layout_marginTop="@dimen/dp_15"
+        android:paddingHorizontal="@dimen/dp_15"
         android:id="@+id/rl_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -38,6 +40,7 @@
             android:src="@drawable/ic_share"/>
     </RelativeLayout>
     <androidx.core.widget.NestedScrollView
+        android:paddingHorizontal="@dimen/dp_15"
         android:layout_above="@id/bt_join"
         android:layout_below="@id/rl_top"
         android:layout_width="match_parent"
@@ -180,6 +183,8 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
     <com.google.android.material.button.MaterialButton
+        android:layout_marginHorizontal="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_15"
         app:cornerRadius="@dimen/dp_10"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_55"

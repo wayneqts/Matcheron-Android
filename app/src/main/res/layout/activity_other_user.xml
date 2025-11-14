@@ -6,9 +6,11 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".activities.OtherUser"
-    android:paddingHorizontal="@dimen/dp_15"
-    android:paddingTop="@dimen/dp_15">
+    android:fitsSystemWindows="true"
+    >
     <RelativeLayout
+        android:paddingHorizontal="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_15"
         android:id="@+id/rl_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -25,6 +27,7 @@
             android:src="@mipmap/ic_more"/>
     </RelativeLayout>
     <androidx.core.widget.NestedScrollView
+        android:paddingHorizontal="@dimen/dp_15"
         android:id="@+id/nsv_content"
         android:visibility="gone"
         android:layout_width="match_parent"
@@ -43,6 +46,22 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/bt_like"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/white"
+                    android:gravity="center_vertical"
+                    app:iconSize="@dimen/dp_18"
+                    app:icon="@mipmap/ic_liked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="@color/green"
+                    android:layout_toStartOf="@+id/cv_img"
+                    android:layout_marginTop="@dimen/dp_90"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:text="@string/like"
+                    android:textAllCaps="false"
+                    app:cornerRadius="@dimen/dp_10"/>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_img"
                     android:layout_centerHorizontal="true"

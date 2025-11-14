@@ -31,6 +31,7 @@ import com.appmonarchy.matcheron.helper.AppConstrains;
 import com.appmonarchy.matcheron.model.People;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.stfalcon.imageviewer.StfalconImageViewer;
 
@@ -54,7 +55,7 @@ public class OtherUser extends BaseActivity {
     ActivityOtherUserBinding binding;
     String userId, username, blockId, userUrl = "", phone = "";
     Dialog dialog;
-    List<String> imgList;
+    List<String> imgList, likesList;
     boolean isRefresh = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +79,7 @@ public class OtherUser extends BaseActivity {
                 popupOtpUser();
             }
         });
+        binding.btLike.setOnClickListener(v -> addOpt("1"));
         binding.ivUser.setOnClickListener(v -> new StfalconImageViewer.Builder<>(this, imgList, (imageView1, image) ->
                 Glide.with(this).load(image).error(R.drawable.no_avatar).centerInside().diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true).into(imageView1)).show());
     }
@@ -86,8 +88,10 @@ public class OtherUser extends BaseActivity {
     private void init(){
         tool.disableBt(binding.btBlock);
         imgList = new ArrayList<>();
+        likesList = new ArrayList<>();
         tool.showLoading();
         getData(getIntent().getStringExtra("id"));
+        getLikesList();
         checkBlock();
     }
 
@@ -192,6 +196,35 @@ public class OtherUser extends BaseActivity {
 
             @Override
             public void onFailure(Call<JsonObject> call, Throwable t) {
+
+            }
+        });
+    }
+
+    // get data
+    private void getLikesList(){
+        api.getArrById("likes.php", pref.getUserId()).enqueue(new Callback<>() {
+            @Override
+            public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
+                likesList.clear();
+                if (response.isSuccessful()) {
+                    try {
+                        JSONArray jsArr = new JSONArray(String.valueOf(response.body()));
+                        if (jsArr.length() > 0) {
+                            for (int i = 0; i < jsArr.length(); i++) {
+                                JSONObject obj = (JSONObject) jsArr.get(i);
+                                likesList.add(obj.optString("id"));
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+                binding.btLike.setVisibility(likesList.contains(getIntent().getStringExtra("id")) ? View.GONE : View.VISIBLE);
+            }
+
+            @Override
+            public void onFailure(Call<JsonArray> call, Throwable t) {
 
             }
         });
@@ -338,6 +371,9 @@ public class OtherUser extends BaseActivity {
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                 if (response.isSuccessful()){
                     isRefresh = true;
+                    if (type.equals("1")){
+                        binding.btLike.setVisibility(View.GONE);
+                    }
                     Toast.makeText(OtherUser.this, "Successfully", Toast.LENGTH_SHORT).show();
                 }
                 tool.hideLoading();
